@@ -18,7 +18,7 @@ const addBinary = (str1, str2) => {
     }
 
     if (pointerTwo >= 0) {
-      digitTwo = parseInt(str2[pointerTwo]) // 1 -> 1 -> 0
+      digitTwo = parseInt(str2[pointerTwo]); // 1 -> 1 -> 0
     } else {
       digitTwo = 0;
     }
@@ -44,10 +44,12 @@ const addBinary = (str1, str2) => {
     pointerTwo = pointerTwo - 1;
   }
 
+  if (carry) result.push(carry)
 
   result.reverse()
   return result.join('')
 
 }
+
 console.log(addBinary('101', '11'))
 
