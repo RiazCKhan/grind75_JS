@@ -1,13 +1,17 @@
 // Using two pointers
 /* 
-Width = Get the distance between the two values in the array
-Multiply the lesser of the two numbers by the distance, save result
-If result is larger than previous overwrite result with new max
-return max
+- width = Get the distance between the two values in the array
+- Multiply the lesser of the two numbers by the distance (width), save result (value)
+KEY NOTE:
+- Move the pointer pointing to the shorter vertical line inward by one step. 
+    This is because if we try to move the pointer at the longer vertical line, 
+    we won’t gain any increase in area, since the shorter line limits it.
+- If result (value) is larger than previous overwrite result with new max
+- return max
+
 */
 
 const containerWithMostWater = (height) => {
-
   let left = 0;
   let right = height.length - 1;
 
@@ -20,11 +24,13 @@ const containerWithMostWater = (height) => {
     if (height[left] > height[right]) {
 
       value = height[right] * width;
+      right--;
 
     }
     else {
 
       value = height[left] * width;
+      left++;
 
     }
 
@@ -32,8 +38,6 @@ const containerWithMostWater = (height) => {
       max = value;
     }
 
-    left++;
-    right--;
   }
 
   return max;
