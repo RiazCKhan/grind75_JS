@@ -14,7 +14,6 @@ KEY NOTE:
 const containerWithMostWater = (height) => {
   let left = 0;
   let right = height.length - 1;
-
   let max = 0;
 
   while (left < right) {
@@ -22,22 +21,14 @@ const containerWithMostWater = (height) => {
     let value = 0;
 
     if (height[left] > height[right]) {
-
       value = height[right] * width;
       right--;
-
-    }
-    else {
-
+    } else {
       value = height[left] * width;
       left++;
-
     }
 
-    if (value > max) {
-      max = value;
-    }
-
+    if (value > max) max = value
   }
 
   return max;
