@@ -1,6 +1,7 @@
-// Using Two Pointer + Current Pointer\
-// Sort Array in ascending order
-// Create 3 variables, Low, Current, High
+// Using Two Pointer + Current Pointer
+// Use Sort built-in Array method to sort array in ascending order
+// Create 2 variables, Low, High
+// -- *Low must be offset from Current
 // Current is Represented by the Outer Nested Loop Idex
 // IF 3 Values are > target, decrement High
 // IF 3 Values are < target, increment Low
