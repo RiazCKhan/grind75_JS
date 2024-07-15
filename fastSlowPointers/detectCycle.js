@@ -4,7 +4,19 @@
 // Else if the fast pointer reaches the end of the linked list return False
 
 
-export function detectCycle(head) {
+const detectCycle = (head) => {
 
+  let slow = head;
+  let fast = head;
 
+  while (fast && fast.next) {
+
+    slow = slow.next;
+    fast = fast.next.next;
+
+    if (slow === fast) {
+      return true
+    }
+  }
+  return false
 }
