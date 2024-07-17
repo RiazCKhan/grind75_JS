@@ -27,9 +27,9 @@ const firstBadVersion = (versionList, badVersionList) => {
     }
   }
 
-  return [apiCalls, versionList[start]]
+  return [versionList[start], apiCalls]
 }
 
-let vList = [1, 2, 3, 4, 5]
-let badvList = [3, 4, 5]
+let vList = [1, 2, 3, 4, 5, 6, 7, 8]
+let badvList = [6, 7, 8]
 console.log(firstBadVersion(vList, badvList))
