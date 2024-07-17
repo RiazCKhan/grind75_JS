@@ -12,10 +12,10 @@ const firstBadVersion = (versionList, badVersionList) => {
 
   let start = 0;
   let end = versionList.length - 1;
-  let middle = Math.floor((start + end) / 2)
   let apiCalls = 0;
 
   while (start <= end) {
+    let middle = Math.floor((start + end) / 2)
 
     if (isBadVersion(versionList[middle], badVersionList) === true) {
       end = middle - 1;
@@ -27,5 +27,9 @@ const firstBadVersion = (versionList, badVersionList) => {
     }
   }
 
-  return [apiCalls, versionList[middle]]
+  return [apiCalls, versionList[start]]
 }
+
+let vList = [1, 2, 3, 4, 5]
+let badvList = [3, 4, 5]
+console.log(firstBadVersion(vList, badvList))
