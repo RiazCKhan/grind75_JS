@@ -12,13 +12,29 @@
 // Repeat this process until left becomes greater than right
 // Return the cumulative sum stored in the stored water variable
 
-
-
 const rainWater = (heights) => {
 
+  let left = 0
+  let right = heights.length - 1
 
+  let leftMax = 0;
+  let rightMax = 0;
+  let trappedWater = 0;
 
+  while (left <= right) {
+    if (leftMax >= rightMax) {
+      rightMax = Math.max(rightMax, heights[right])
+      trappedWater += Math.max(0, (rightMax - heights[right]))
+      right--
+    } else {
+      leftMax = Math.max(leftMax, heights[left])
+      trappedWater += Math.max(0, (leftMax - heights[left]))
+      left++
+    }
+  }
+
+  return trappedWater
 }
 
-let testcase = [0, 1, 3, 1, 0, 1, 4, 0, 2]
-console.log(rainWater(testcase))
+let testcase = [4, 2, 1, 3, 1]
+rainWater(testcase)
