@@ -1,34 +1,34 @@
 // Using Two Pointers + Index Pointer
-// Multply all values except Index Pointer
-// Add to result array
-
+// Multiply all elements EXCEPT arr[i]
+// Start out of bounds
 
 
 const productExceptSelf = (arr) => {
 
-  let pointer = 0;
-  let index = 0
-  let result = [];
-  let value = 1;
+  let left = 0;
+  let right = arr.length - 1
 
-  while (index <= arr.length - 1) {
+  let leftProduct = 1;
+  let rightProduct = 1;
 
-    let temp = arr[index];
-    arr[index] = 1;
+  let result = new Array(arr.length).fill(1)
 
-    value = value * arr[pointer];
+  while (left < right) {
 
-    if (pointer === arr.length - 1) {
-      result.push(value)
-      pointer = 0;
-      arr[index] = temp;
-      index++;
-    }
-    pointer++
+    result[left] *= leftProduct
+    result[right] *= rightProduct
+
+    leftProduct *= arr[left]
+    rightProduct *= arr[right]
+
+
+    left++
+    right--
   }
-  return result;
+
+  return result
 }
 
-let testcase = [2, 4, 3, -1, -2];
+let testcase = [2, 4, 3, -1, -2]; // Output -> [24, 12, 16, -48, -24]
 
-productExceptSelf(testcase);
+console.log(productExceptSelf(testcase));
