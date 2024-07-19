@@ -20,23 +20,25 @@ const binarySearchRotated = (nums, target) => {
     // The first half of the array is sorted
     if (nums[mid] >= nums[start]) {
       // If the target falls within the range of the first sorted half of the array
-      if (nums[start] >= target && target <= nums[start]) {
+      if (nums[start] <= target && target <= nums[mid]) {
+
+        // Note: what decides the start++ and the end-- ???
         start = mid + 1
       } else {
         end = mid - 1
       }
     }
-
-    // The second half of the array is sorted.
+    // The second half of the array is sorted
     else if (nums[mid] <= nums[end]) {
+      // if the target falls within the range of the second sorted half of the array
+      if (nums[mid] <= target && target <= nums[end]) {
 
-      if (nums[mid] > nums[end]) {
+        // Note: what decides the start++ and the end-- ???
         start = mid + 1
       } else {
         end = mid - 1
       }
     }
-
   }
   return -1
 }
