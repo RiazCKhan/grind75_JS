@@ -27,9 +27,11 @@ const calculator = (expression) => {
     if (expression[i] === '+') {
       sign = 1
       result = result + number * sign
+      number = 0
     } else if (expression[i] === '-') {
       sign = -1
       result = result + number * sign
+      number = 0
     }
 
     // Identify bracket operator
