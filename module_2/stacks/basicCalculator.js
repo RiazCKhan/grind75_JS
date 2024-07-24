@@ -26,17 +26,21 @@ const calculator = (expression) => {
     // Identify +/- operator
     if (expression[i] === '+') {
       sign = 1
+      result = result + number * sign
     } else if (expression[i] === '-') {
       sign = -1
+      result = result + number * sign
     }
 
     // Identify bracket operator
     if (expression[i] === '(') {
+      console.log(`Expression[i] ${expression[i]} && Identify ( ${sign}`)
     } else if (expression[i] === ')') {
+      console.log(`Expression[i] ${expression[i]} && Identify ) ${sign}`)
     }
 
   }
-  return number
+  return null
 }
 
 
