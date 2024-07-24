@@ -4,7 +4,7 @@
 // 3. Handle "("
 // 4. Handle ")"
 
-// Identify consecutive Numbers
+// Identify consecutive Numbers 
 
 
 
@@ -23,26 +23,23 @@ const calculator = (expression) => {
       number = number * 10 + parseInt(expression[i])
     }
 
-    //   if (expression[i] === '+') {
-    //     sign = 1
-    //     result += currentNum * sign
-    //   } else if (expression[i] === '-') {
-    //     sign = -1
-    //     result += currentNum * sign
-    //   }
+    // Identify +/- operator
+    if (expression[i] === '+') {
+      sign = 1
+    } else if (expression[i] === '-') {
+      sign = -1
+    }
 
-    //   if (expression[i] === '(') {
-    //     stack.push(result)
-    //     stack.push(sign)
-    //   } else if (expression[i] === ')') {
-    //     result += stack.pop()
-    //   }
+    // Identify bracket operator
+    if (expression[i] === '(') {
+    } else if (expression[i] === ')') {
+    }
 
   }
   return number
 }
 
 
-// let testcase = '13 + (1 + 2) - 3'
-let testcase = '13'
+let testcase = '13 + (1 + 2) - 3'
+// let testcase = '13'
 console.log(calculator(testcase));
