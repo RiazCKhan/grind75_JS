@@ -10,10 +10,28 @@
 
 const rpn = (tokens) => {
   let stack = [];
-  let signVal = 0
-  let result = 0
 
+  for (const token of tokens) {
+    // BEDMAS
+    if (token === '/' || token === '*' || token === '+' || token === '-') {
+      let num1 = stack.pop()
+      let num2 = stack.pop()
 
+      if () {
+
+      } else if () {
+
+      } else if () {
+
+      } else if () {
+
+      }
+
+    } else {
+      stack.push(parseInt(token))
+    }
+  }
+  return stack.pop()
 }
 
 let testcase = ['8', '2', '/', '3', '+'];
