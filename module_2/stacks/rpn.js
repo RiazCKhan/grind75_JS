@@ -17,16 +17,15 @@ const rpn = (tokens) => {
       let num1 = stack.pop()
       let num2 = stack.pop()
 
-      if () {
-
-      } else if () {
-
-      } else if () {
-
-      } else if () {
-
+      if (token === '/') {
+        stack.push(Math.trunc(num2 / num1))
+      } else if (token === '*') {
+        stack.push(num2 * num1)
+      } else if (token === '+') {
+        stack.push(num2 + num1)
+      } else if (token === '-') {
+        stack.push(num2 - num1)
       }
-
     } else {
       stack.push(parseInt(token))
     }
